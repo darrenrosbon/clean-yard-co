@@ -596,6 +596,9 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
 .services-grid .svc-body h3, .services-grid .svc-body p { text-shadow: none; }
 .services-grid .svc-body p { color: var(--ink-soft); }
 .services-grid .chips li { background: rgba(8, 28, 64, .6); }
+.services-grid .svc-body { display: flex; flex-direction: column; }
+.services-grid .svc-cta { margin-top: auto; align-self: flex-start; padding: 13px 22px; }
+.services-grid .chips { margin-bottom: 22px; }
 </style>
 <noscript><style>.img-fade { opacity: 1; }</style></noscript>
 </head>
@@ -685,6 +688,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Borehole maintenance</li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Tank and pump installation</li>
             </ul>
+            <a class="btn btn-solid svc-cta" href="#quote" data-service="Irrigation and borehole maintenance">Get a quote<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -698,6 +702,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Clean drinking water</li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Installation</li>
             </ul>
+            <a class="btn btn-solid svc-cta" href="#quote" data-service="Water purification">Get a quote<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -711,6 +716,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Taps and fittings</li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Installations</li>
             </ul>
+            <a class="btn btn-solid svc-cta" href="#quote" data-service="Plumbing">Get a quote<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -724,6 +730,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Repairs</li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Upgrades</li>
             </ul>
+            <a class="btn btn-solid svc-cta" href="#quote" data-service="Renovations">Get a quote<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -737,6 +744,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Exterior painting</li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Touch-ups</li>
             </ul>
+            <a class="btn btn-solid svc-cta" href="#quote" data-service="Painting">Get a quote<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -750,6 +758,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Lawn care</li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Gardening</li>
             </ul>
+            <a class="btn btn-solid svc-cta" href="#quote" data-service="Yard services and gardening">Get a quote<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -966,6 +975,17 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
   menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
   window.matchMedia("(min-width: 1024px)").addEventListener("change", function () { setMenu(false); });
+
+  /* Service cards: "Get a quote" jumps to the form with that service already chosen */
+  document.querySelectorAll(".svc-cta").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var sel = document.getElementById("f-service");
+      if (!sel) return;
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text === a.getAttribute("data-service")) { sel.selectedIndex = i; sel.dispatchEvent(new Event("input", { bubbles: true })); break; }
+      }
+    });
+  });
 
   /* Scroll reveal */
   var els = document.querySelectorAll(".reveal");
