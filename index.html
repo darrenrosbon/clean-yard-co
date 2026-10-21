@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Sora:wght@500;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Sora:wght@500;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap" rel="stylesheet">
 
 <style>
 /* ---------- Tokens (swap these to re-theme) ---------- */
@@ -114,7 +114,7 @@ main > section.facts { padding-bottom: 8px; }
 .brand-icon { flex: none; width: 40px; height: 40px; border-radius: var(--radius); }
 .brand-leaf { flex: none; width: 24px; height: 24px; color: var(--leaf); }
 .wordmark { display: grid; gap: 6px; line-height: 1; justify-items: center; text-align: center; }
-.wordmark-main { display: inline-flex; align-items: center; gap: 8px; font: italic 600 1.7rem/1 "Fraunces", Georgia, serif; letter-spacing: -.01em; color: var(--ink); }
+.wordmark-main { display: inline-flex; align-items: center; gap: 8px; font: 800 1.5rem/1 "Montserrat", sans-serif; letter-spacing: 0; color: var(--ink); }
 .wordmark-sub { display: flex; align-items: center; justify-content: center; gap: 8px; font: 800 .6rem/1 "Nunito Sans", sans-serif; letter-spacing: .26em; text-transform: uppercase; color: var(--leaf); white-space: nowrap; }
 .wordmark-sub::before, .wordmark-sub::after { content: ""; width: 14px; height: 1px; background: currentColor; }
 .wordmark-sub.loc { color: var(--ink-soft); letter-spacing: .4em; font-weight: 600; }
@@ -262,7 +262,7 @@ main > section.section.process { position: relative; isolation: isolate; overflo
 .hs { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .hs1 { z-index: 1; }
 .hs2 { z-index: 2; clip-path: polygon(0 0, 0 0, -30% 100%, 0 100%); }
-.hs3 { z-index: 3; object-position: 50% 62%; clip-path: polygon(0 0, 0 0, -30% 100%, 0 100%); }
+.hs3 { z-index: 3; object-position: 50% 80%; clip-path: polygon(0 0, 0 0, -30% 100%, 0 100%); }
 .hero-shield { display: block; width: 104px; height: auto; filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .55)); }
 .hero-plate { display: grid; justify-items: center; gap: 8px; margin-top: 12px; }
 .hero-plate b { background: var(--leaf); color: #0a1f44; font: 800 clamp(1.1rem, 5vw, 1.7rem)/1 "Sora", sans-serif; letter-spacing: .1em; padding: 7px 10px 7px 16px; border-radius: 5px; box-shadow: 0 6px 20px rgba(0, 0, 0, .45); }
@@ -271,7 +271,7 @@ main > section.section.process { position: relative; isolation: isolate; overflo
 .words { position: relative; display: block; height: 1.15em; width: 13ch; max-width: 94vw; font: 800 clamp(2.3rem, 11vw, 4.6rem)/1.1 "Sora", sans-serif; letter-spacing: -.01em; color: var(--ink); text-align: center; }
 .words span { position: absolute; inset: 0; opacity: 0; white-space: nowrap; }
 .words span:nth-child(1) { opacity: 1; }
-.words span:nth-child(3) { font: italic 600 1em/1.1 "Fraunces", Georgia, serif; color: var(--leaf); }
+.words span:nth-child(3) { color: var(--leaf); }
 .brand-shield { flex: none; width: 36px; height: 40px; }
 .brand-shield.foot-shield { width: 64px; height: 70px; }
 .wm { display: grid; gap: 6px; line-height: 1; justify-items: center; text-align: center; }
@@ -479,7 +479,7 @@ html { scroll-behavior: smooth; }
 .services-grid .svc::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5, 16, 40, .38) 0%, rgba(5, 16, 40, .58) 40%, rgba(5, 16, 40, .9) 100%); }
 .services-grid .svc-body h3, .services-grid .svc-body p { text-shadow: 0 1px 14px rgba(0, 0, 0, .6); }
 .services-grid .svc-body { flex: none; padding: 26px 24px 26px; color: #eaf1fb; }
-.services-grid .svc-body h3 { font: italic 600 clamp(1.8rem, 6vw, 2.2rem)/1.05 "Fraunces", Georgia, serif; letter-spacing: 0; color: #eaf1fb; }
+.services-grid .svc-body h3 { font: 700 clamp(1.35rem, 5vw, 1.8rem)/1.15 "Montserrat", sans-serif; letter-spacing: 0; color: #eaf1fb; }
 .services-grid .svc-body p { color: #d3e0f3; margin-top: 8px; max-width: 46ch; }
 .services-grid .chips { margin-top: 16px; gap: 8px; }
 .services-grid .chips li { background: rgba(8, 28, 64, .62); border-color: rgba(243, 248, 238, .22); color: #eaf1fb; font-size: .9rem; padding: 7px 13px; backdrop-filter: blur(3px); }
@@ -497,11 +497,11 @@ html { scroll-behavior: smooth; }
 .fab-wa:hover { background: #3be07a; }
 .fab .fab-ico { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 /* steps: timeline */
-.process h2 { max-width: none; text-align: center; font: italic 600 clamp(2.4rem, 8vw, 3.8rem)/1.05 "Fraunces", Georgia, serif; letter-spacing: -.01em; text-shadow: 0 2px 18px rgba(0, 0, 0, .45); }
+.process h2 { max-width: none; text-align: center; font: 800 clamp(1.9rem, 7vw, 3.1rem)/1.1 "Montserrat", sans-serif; letter-spacing: -.01em; text-shadow: 0 2px 18px rgba(0, 0, 0, .45); }
 .process-list { margin-top: 44px; gap: 30px; }
 .process-list li { position: relative; display: grid; grid-template-columns: 52px 1fr; column-gap: 18px; align-items: start; padding: 0; background: none; border: 0; }
 .process-list li .p-ico { grid-row: 1 / span 2; margin: 0; position: relative; z-index: 1; }
-.process-list h3 { font: italic 600 1.6rem/1.1 "Fraunces", Georgia, serif; letter-spacing: 0; align-self: end; text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
+.process-list h3 { font: 700 1.25rem/1.2 "Montserrat", sans-serif; letter-spacing: 0; align-self: end; text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
 .process-list p { margin-top: 6px; line-height: 1.55; text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
 .process-list li:not(:last-child)::after { content: ""; position: absolute; left: 25px; top: 56px; bottom: -22px; width: 2px; background: linear-gradient(180deg, var(--leaf), rgba(143, 224, 107, .25)); }
 @media (min-width: 1024px) {
@@ -679,7 +679,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
         </article>
 
         <article class="svc reveal">
-          <div class="media ph" style="background-image:url(data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAwBQCdASoUABsAPu1iqE2ppaOiMAgBMB2JbAC1G5CggAZcbca+Z1pMgv75vbSDS/QmgADdj43JrDA9GJtNQF3Z0K8Ui+Y8mMoCMA2YccStv8r/gsVrvmkhaBBTqZpfQaJjR7Vb+YJde3XNraYXGJob3IqpVAC4eXSR+YpBSb04WYjICXgqNP91irjO8C4KhtAnqNAxWBQ9p4bbmqtLZWzFhn1tB8d9l8+6d9omH0j1AO8SIYez0kTuG4GB3/CyQZxJFoAA)"><img class="img-fade" decoding="async" loading="lazy" src="img/plumbing2-800.webp" srcset="img/plumbing2-800.webp 800w, img/plumbing2-1200.webp 1200w" sizes="(max-width: 767px) 100vw, 50vw" width="1200" height="1600" alt="Plumber in a hard hat and hi-vis vest holding a pipe wrench" style="object-position: 50% 30%"></div>
+          <div class="media ph" style="background-image:url(data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoUABAAPu1iqU2ppaOiMAgBMB2JZwDImBmuDNFuUcvAAP7nPss42ddvWy6Fv6DxHAy20iwQJXUBIBf1C4We9wRAB4PkgAAA)"><img class="img-fade" decoding="async" loading="lazy" src="img/plumbing3-800.webp" srcset="img/plumbing3-800.webp 800w, img/plumbing3-1200.webp 1200w" sizes="(max-width: 767px) 170vw, 50vw" width="1200" height="958" alt="White water pipes fitted to a freshly finished apartment wall" style="object-position: 50% 30%"></div>
           <div class="svc-body">
             <h3>Plumbing</h3>
             <p>Repairs and installations for pipes, taps and fittings around the home and yard.</p>
