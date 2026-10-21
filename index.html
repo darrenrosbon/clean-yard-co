@@ -567,7 +567,8 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
   footer .foot-grid { grid-template-columns: repeat(2, auto); justify-content: center; gap: 24px 88px; }
   footer .foot-brand { grid-column: 1 / -1; }
   footer .foot-contact, footer .foot-jump { grid-column: auto; }
-  footer .foot-jump ul { grid-template-columns: repeat(2, auto); gap: 6px 28px; }
+  footer .foot-jump ul { grid-template-columns: 1fr; gap: 6px; }
+  footer .foot-contact, footer .foot-jump { align-self: start; }
   footer .foot-contact ul { gap: 6px; }
   footer .legal { margin-top: 24px; padding-top: 16px; text-align: center; }
   main > section#quote { padding-bottom: 56px; background: linear-gradient(180deg, var(--paper) calc(100% - 80px), var(--band)); }
@@ -911,6 +912,7 @@ footer .foot-contact ul, footer .foot-jump ul { justify-content: center; justify
         <h3>Jump to</h3>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#why">Why us</a></li>
           <li><a href="#areas">Areas</a></li>
           <li><a href="#quote">Quote</a></li>
